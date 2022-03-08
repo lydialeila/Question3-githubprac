@@ -48,6 +48,11 @@ plot_df <- data.frame(
   average_rainfall = c(mean_rainfall_melb, mean_rainfall_ox))
 
 write.table(x = plot_df,
-            file = "average-rainfall.csv",
+            file = "output/average-rainfall.csv",
             sep = ",",
             row.names = FALSE)
+
+sink(file = "script/package-versions.txt")
+sessionInfo()
+sink()
+
